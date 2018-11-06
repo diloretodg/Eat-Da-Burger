@@ -1,7 +1,7 @@
 body {
   width: 99%;
   height: 900px;
-  background-color: orange;
+  background-color: lightcoral;
 }
 
 #top-bar {
@@ -19,18 +19,6 @@ body {
   margin: 0;
   list-style-type: none;
   border: 0;
-}
-
-@media (min-width: 1200px) {
-  .container {
-    width: 990px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    width: 990px;
-  }
 }
 
 .enter_section {
@@ -64,5 +52,5 @@ body {
 }
 
 h1 {
-  color: #f30;
+  color: purple;
 }
