@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+    <title>Eat The Burger</title>
+    <script src="./assets/js/script.js"></script>
+
+    <script id="handlebars-template" type="text/x-handlebars-template">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center" id="top-bar">
+        <img src="./assets/images/burger-png.png" width="400px" id="burger-image" alt="burger" >
+                    <h1> Eat-Da-Burger! </h1>
+                </div>
+                <div class="col-md-6 text-center" class="task">
+                    <div class="row">
+                        {{#each burger_data}}
+                            {{#unless this.eaten}}
+                                <div class="col-md-9 text-center">
+                                    <pre>{{this.id}}. {{this.burger}}
+                                    </pre>
+                                    <!-- {{this.Date}} -->
+                                </div>
+                                <div class="col-md-3 text-center">
+                                    <form class="devour-form button-size">
+                                        <input input type="hidden" class="burger_id" type="text" value={{this.id}}><br>
+                                        <button type="submit" class="btn btn-default">Eat Me!</button>
+                                    </form>
+                                </div>
+                            {{/unless}}
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="col-md-6 text-center" class="task">
+                    {{#each burger_data}}
+                        {{#if this.eaten}}
+                            <input class="form-control" type="text" placeholder="{{this.id}} . {{this.burger}}" readonly>
+                        {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center enter_section">
+                    <form class="create-form">
+                        <input type="text" class="form-control" name="burger" value="" id="enter_text">
+                        <button type="submit" class="btn btn-primary" id="text-enter-button">Submit</button>
+                    </form>
+                    <p>Enter a burger you want to eat Click the "Submit" button.</p>
+                </div>
+            </div>
+        </div>
+    </script>
+</head>
+
+    <body>
+        <div id="app"></div>
+    </body>
+    
+</html>
