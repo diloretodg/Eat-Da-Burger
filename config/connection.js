@@ -12,7 +12,7 @@ connection = mysql.createConnection(process.env.JAWSDB_URL);
   port: 3306,
   user: "root",
   password: "Admin!",
-  database: "burgers_db"
+  database: "hxwk3ktxprdp0fdf"
 
 });
 }
